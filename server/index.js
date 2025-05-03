@@ -17,7 +17,7 @@ import Transaction from "./Models/transactionModel.js";
 dotenv.config();
 
 const app = express();
-app.use(cors());
+app.options("*", cors()); // allow pre-flight for all routes
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended : false }));
